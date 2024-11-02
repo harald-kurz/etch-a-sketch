@@ -25,10 +25,17 @@ function createGrid(){
     div.style.flexBasis = `${divWidth}px`;
 
     div.addEventListener('mouseenter', function() {
+      if (this.style.backgroundColor) {
+        if (this.style.opacity != '1.0'){
+          this.style.opacity = parseFloat(this.style.opacity) + 0.1
+        }
+      } else {
       const red = Math.floor(255 * Math.random());
       const green = Math.floor(255 * Math.random());
       const blue = Math.floor(255 * Math.random());
       this.style.backgroundColor = `rgb(${red},${green},${blue})`;
+      this.style.opacity = 0.1;
+    }
     });
 
     container.appendChild(div);
