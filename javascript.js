@@ -12,6 +12,10 @@ function createGrid(){
     div.style.flexShrink = 0;
     div.style.flexBasis = `${divWidth}%`;
 
+    div.addEventListener('mouseenter', function() {
+      this.style.backgroundColor = 'black';
+    });
+
     container.appendChild(div);
   }
 }
