@@ -2,6 +2,18 @@ let gridSize = 16;
 
 const container = document.querySelector('#container');
 
+function resetGrid() {
+  container.replaceChildren();
+
+  gridSize = prompt('How many blocks per row do you want (max. 100)');
+
+  if(gridSize > 100) {
+    gridSize = 100;
+  }
+
+  createGrid();
+}
+
 function createGrid(){
   for (let index = 0; index < (gridSize*gridSize); index++) {
     const div = document.createElement('div');
