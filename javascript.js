@@ -25,7 +25,10 @@ function createGrid(){
     div.style.flexBasis = `${divWidth}px`;
 
     div.addEventListener('mouseenter', function() {
-      this.style.backgroundColor = 'black';
+      const red = Math.floor(255 * Math.random());
+      const green = Math.floor(255 * Math.random());
+      const blue = Math.floor(255 * Math.random());
+      this.style.backgroundColor = `rgb(${red},${green},${blue})`;
     });
 
     container.appendChild(div);
